@@ -30,7 +30,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: integrador123456789
     url: jdbc:mysql://localhost:3306/viaje?serverTimezone=UTC
-    username: root
+    username: integrador
   jpa:
     hibernate:
       ddl-auto: update

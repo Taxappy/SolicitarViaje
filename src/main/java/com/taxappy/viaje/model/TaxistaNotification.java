@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Notification implements Serializable {
+public class TaxistaNotification implements Serializable {
 	/**
 	 * 
 	 */

@@ -5,9 +5,9 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 
-public interface NotificationDeleteStream {
-	String INPUT = "notificationD-in";
-	String OUTPUT = "notificationD-out";
+public interface TaxistaNotificationStream {
+	String INPUT = "notificationT-in";
+	String OUTPUT = "notificationT-out";
 
 	@Input(INPUT)
 	SubscribableChannel subscribe();

@@ -52,7 +52,7 @@ public class SolicitarViajeController {
 	@StreamListener(TaxistaNotificationStream.INPUT)
 	public void saveNotification(@Payload TaxistaNotification notificacion) {
 		TaxistaNotifications.add(notificacion);
-		this.template.convertAndSend("/message",  TaxistaNotifications);
+		this.template.convertAndSend("/websocket/message",  TaxistaNotifications);
 	}
 
 }

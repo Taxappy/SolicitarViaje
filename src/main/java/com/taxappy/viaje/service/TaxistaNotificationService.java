@@ -22,7 +22,7 @@ public class TaxistaNotificationService {
 		this.taxistaNotificationStream = notificationSaveStreams;
 	}
 
-	public void saveNotification(final TaxistaNotification notificacion) {
+	public void sendNotification(final TaxistaNotification notificacion) {
 		MessageChannel messageChannel = taxistaNotificationStream.notifyTo();
 		messageChannel.send(MessageBuilder.withPayload(notificacion)
 				.setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON).build());

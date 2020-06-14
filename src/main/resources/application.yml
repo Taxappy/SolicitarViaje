@@ -20,6 +20,12 @@ spring:
           notificationT-out:
             destination: taxista
             contentType: application/json
+          notificationU-in:
+            destination: usuario
+            contentType: application/json
+          notificationU-out:
+            destination: usuario
+            contentType: application/json
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: integrador

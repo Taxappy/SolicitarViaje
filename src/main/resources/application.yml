@@ -14,17 +14,17 @@ spring:
           brokers:
           - localhost:9092
       bindings:
-          notification-in:
-            destination: SaveNotification
+          notificationT-in:
+            destination: taxista
             contentType: application/json
-          notification-out:
-            destination: SaveNotification
+          notificationT-out:
+            destination: taxista
             contentType: application/json
-          notificationD-in:
-            destination: DeleteNotification
+          notificationU-in:
+            destination: usuario
             contentType: application/json
-          notificationD-out:
-            destination: DeleteNotification
+          notificationU-out:
+            destination: usuario
             contentType: application/json
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

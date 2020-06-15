@@ -49,11 +49,11 @@ public class SolicitarViajeController {
 		return viajeRepositoy.save(viaje);
 	}
 
-	@GetMapping("/{idUsuario}")
-	public Iterable<Viaje> findByIdUsuario(@PathVariable int idUsuario) {
+	@GetMapping("/usuario/{idUsuario}")
+	public Iterable<Viaje> findByIdUsuario(@PathVariable String idUsuario) {
 		return viajeRepositoy.findViajesByIdUsuario(idUsuario);
 	}
-	@GetMapping("/{idTaxista}")
+	@GetMapping("/taxista/{idTaxista}")
 	public Iterable<Viaje> findByIdTaxista(@PathVariable int idTaxista) {
 		return viajeRepositoy.findViajesByIdTaxista(idTaxista);
 	}

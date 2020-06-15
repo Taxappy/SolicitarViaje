@@ -64,20 +64,20 @@ public class SolicitarViajeController {
 	}
 
 	@PostMapping("/notificacion/taxista")
-	public String pedirViaje(@RequestBody Viaje viaje) {
+	public TaxistaNotification pedirViaje(@RequestBody Viaje viaje) {
 		TaxistaNotification notificacion = new TaxistaNotification();
 		notificacion.setIdUsuario(viaje.getIdUsuario());
 		notificacion.setLatitud(viaje.getLatitud());
 		notificacion.setLongitud(viaje.getLongitud());
 		taxistaNotificacionService.sendNotification(notificacion);
-		return "El viaje ha sido pedido";
+		return notificacion;
 
 	}
 
 	@DeleteMapping("/notificacion/taxista")
-	public String cancelarViaje(@RequestBody TaxistaNotification notificacion) {
+	public TaxistaNotification cancelarViaje(@RequestBody TaxistaNotification notificacion) {
 		taxistaNotificacionService.sendNotification(notificacion);
-		return "El viaje se a cancelado";
+		return notificacion;
 	}
 
 	@GetMapping("/notificacion/taxista")
@@ -86,9 +86,9 @@ public class SolicitarViajeController {
 	}
 
 	@PostMapping("/notificacion/usuario")
-	public String aceptarViaje(@RequestBody UsuarioNotification notificacion) {
+	public UsuarioNotification aceptarViaje(@RequestBody UsuarioNotification notificacion) {
 		usuarioNotificacionService.sendNotification(notificacion);
-		return "Su viaje ha sido aceptado por un taxista";
+		return notificacion;
 
 	}
 

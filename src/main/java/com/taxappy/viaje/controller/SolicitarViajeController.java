@@ -86,7 +86,7 @@ public class SolicitarViajeController {
 	}
 
 	@PostMapping("/notificacion/usuario")
-	public String pedirViaje(@RequestBody UsuarioNotification notificacion) {
+	public String aceptarViaje(@RequestBody UsuarioNotification notificacion) {
 		usuarioNotificacionService.sendNotification(notificacion);
 		return "Su viaje ha sido aceptado por un taxista";
 

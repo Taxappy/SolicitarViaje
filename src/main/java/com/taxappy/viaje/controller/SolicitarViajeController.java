@@ -104,7 +104,7 @@ public class SolicitarViajeController {
 
 	@StreamListener(UsuarioNotificationStream.INPUT)
 	public void NotificationU(@Payload UsuarioNotification notificacion) {
-		notificacionesTaxistas.removeIf(n -> (n.getId() == notificacion.getIdTaxistaNotificacion()));
+		System.out.println(notificacionesTaxistas.removeIf(n -> (String.valueOf(n.getId()).equals(String.valueOf(notificacion.getIdTaxistaNotificacion())))));
 		this.template.convertAndSend("/websocket/taxista", notificacionesTaxistas);
 		this.template.convertAndSend("/websocket/usuario", notificacion);
 	}
